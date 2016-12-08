@@ -1,0 +1,42 @@
+<application>
+  <component name="libraryTable">
+    <library name="jackson-annotations-2.7.4">
+      <CLASSES>
+        <root url="jar://E:/java/jackson/jackson-annotations-2.7.4.jar!/" />
+        <root url="jar://E:/java/jackson/jackson-core-2.7.4.jar!/" />
+        <root url="jar://E:/java/jackson/jackson-databind-2.7.4.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="jsoup-1.9.2-sources">
+      <CLASSES>
+        <root url="jar://E:/java/Jsoup/jsoup-1.9.2.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://E:/java/Jsoup/jsoup-1.9.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="slf4j-api-1.7.21-sources">
+      <CLASSES>
+        <root url="jar://E:/java/slf/slf4j-1.7.21/slf4j-1.7.21/slf4j-api-1.7.21.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://E:/java/slf/slf4j-1.7.21/slf4j-1.7.21/slf4j-api-1.7.21-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="slf4j-log4j12-1.7.21-sources">
+      <CLASSES>
+        <root url="jar://E:/java/slf/slf4j-1.7.21/slf4j-1.7.21/slf4j-log4j12-1.7.21.jar!/" />
+        <root url="jar://E:/java/slf/slf4j-1.7.21/slf4j-1.7.21/slf4j-jdk14-1.7.21.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://E:/java/slf/slf4j-1.7.21/slf4j-1.7.21/slf4j-log4j12-1.7.21-sources.jar!/" />
+        <root url="jar://E:/java/slf/slf4j-1.7.21/slf4j-1.7.21/slf4j-jdk14-1.7.21-sources.jar!/" />
+      </SOURCES>
+    </library>
+  </component>
+</application>
