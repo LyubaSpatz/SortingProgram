@@ -52,8 +52,9 @@ public abstract class AbstractSorting {
             }
 
             Files.write(outputFile, rows, Charset.forName("Unicode"));
-            if (!Files.isWritable(outputFile)) {
+            if (Files.notExists(outputFile)) {
                 System.out.println("Output file cannot be written. "+outputFileName);
+                return;
             }
             System.out.println("Program is successfully completed.");
         }
