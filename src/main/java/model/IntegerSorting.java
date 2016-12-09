@@ -3,20 +3,18 @@ package main.java.model;
 import main.java.exceptions.SortingException;
 
 import java.math.BigInteger;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
  * Created by Lyuba on 08.12.2016.
  */
 public class IntegerSorting extends AbstractSorting {
-   private String sortingMode;
 
-   private List<String> rows;
+    private String sortingMode;
 
-   public IntegerSorting(String sortingMode) {
+    private List<String> rows;
+
+    public IntegerSorting(String sortingMode) {
         this.sortingMode = sortingMode;
     }
 
@@ -26,21 +24,19 @@ public class IntegerSorting extends AbstractSorting {
     }
 
     @Override
-    public List<String> insertionSort(){
-        if (rows!=null && !rows.isEmpty()) {
+    public List<String> insertionSort() {
+        if (rows != null && !rows.isEmpty()) {
             if (sortingMode.equals("-d")) {
                 insertionSortDesc();
                 return rows;
 
-            }
-            else  {
+            } else {
                 insertionSortA();
                 return rows;
 
             }
 
-        }
-        else {
+        } else {
             SortingException.writeMessage("No strings (possibly in the input file).");
             return null;
         }
@@ -56,12 +52,10 @@ public class IntegerSorting extends AbstractSorting {
                 }
                 rows.set(j + 1, key.toString());
             }
-        }
-        catch (NumberFormatException ex) {
-            SortingException.writeMessage("String can not be converted to a number. "+ex.getMessage());
+        } catch (NumberFormatException ex) {
+            SortingException.writeMessage("String can not be converted to a number. " + ex.getMessage());
             rows = null;
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             SortingException.writeMessage(ex.getMessage());
             rows = null;
         }
@@ -73,16 +67,14 @@ public class IntegerSorting extends AbstractSorting {
                 BigInteger key = new BigInteger(rows.get(i));
                 int j;
                 for (j = i - 1; j >= 0 && key.compareTo(new BigInteger(rows.get(j))) < 0; j--) {
-                    rows.set(j+1, rows.get(j));
+                    rows.set(j + 1, rows.get(j));
                 }
-                rows.set(j+1, key.toString());
+                rows.set(j + 1, key.toString());
             }
-        }
-        catch (NumberFormatException ex) {
-            SortingException.writeMessage("String can not be converted to a number. "+ex.getMessage());
+        } catch (NumberFormatException ex) {
+            SortingException.writeMessage("String can not be converted to a number. " + ex.getMessage());
             rows = null;
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             SortingException.writeMessage(ex.getMessage());
             rows = null;
         }

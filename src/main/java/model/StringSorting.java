@@ -8,6 +8,7 @@ import java.util.List;
  * Created by Lyuba on 08.12.2016.
  */
 public class StringSorting extends AbstractSorting {
+
     private String sortingMode;
 
     private List<String> rows;
@@ -22,21 +23,19 @@ public class StringSorting extends AbstractSorting {
     }
 
     @Override
-    public List<String> insertionSort(){
-        if (rows!=null && !rows.isEmpty()) {
+    public List<String> insertionSort() {
+        if (rows != null && !rows.isEmpty()) {
             if (sortingMode.equals("-d")) {
                 insertionSortDesc();
                 return rows;
 
-            }
-            else {
+            } else {
                 insertionSortA();
                 return rows;
 
             }
 
-        }
-        else {
+        } else {
             SortingException.writeMessage("No strings (possibly in the input file).");
             return null;
         }
@@ -46,14 +45,19 @@ public class StringSorting extends AbstractSorting {
         try {
             for (int i = 1; i < rows.size(); i++) {
                 String key = rows.get(i);
+                /*Whitespace check*/
+                if (key.indexOf(' ') > -1) {
+                    SortingException.writeMessage("The row \"" + key + "\" content whitespaces.");
+                    rows = null;
+                    return;
+                }
                 int j;
                 for (j = i - 1; j >= 0 && key.compareTo(rows.get(j)) > 0; j--) {
                     rows.set(j + 1, rows.get(j));
                 }
                 rows.set(j + 1, key);
             }
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             SortingException.writeMessage(ex.getMessage());
             rows = null;
         }
@@ -63,14 +67,19 @@ public class StringSorting extends AbstractSorting {
         try {
             for (int i = 1; i < rows.size(); i++) {
                 String key = rows.get(i);
-                int j;
-                for (j = i - 1; j >= 0 && key.compareTo(rows.get(j))<0; j--) {
-                    rows.set(j+1, rows.get(j));
+                /*Whitespace check*/
+                if (key.indexOf(' ') > -1) {
+                    SortingException.writeMessage("The row \"" + key + "\" content whitespaces.");
+                    rows = null;
+                    return;
                 }
-                rows.set(j+1, key);
+                int j;
+                for (j = i - 1; j >= 0 && key.compareTo(rows.get(j)) < 0; j--) {
+                    rows.set(j + 1, rows.get(j));
+                }
+                rows.set(j + 1, key);
             }
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             SortingException.writeMessage(ex.getMessage());
             rows = null;
         }
